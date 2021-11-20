@@ -1,10 +1,10 @@
-module Components.Typography exposing (heading)
+module Components.General.Typography exposing (heading)
 
-import Components.Variables exposing (colors, fontSizes, fontWeights, lineHeights)
-import Css as C exposing (..)
+import Components.General.Variables exposing (colors, fontSizes, fontWeights, fonts, lineHeights)
+import Css exposing (Color, Px, Style, color, fontFamilies, fontSize, lineHeight, property)
 import Dict exposing (Dict)
-import Html.Styled as H exposing (..)
-import Html.Styled.Attributes as A exposing (..)
+import Html.Styled exposing (Attribute, Html, h1, h2, h3, h4, h5, h6, p)
+import Html.Styled.Attributes exposing (css)
 
 
 
@@ -107,11 +107,7 @@ getLineHeightSetting level =
 
 headingFontFamilies : Style
 headingFontFamilies =
-    fontFamilies
-        [ "Tungsten Rounded A"
-        , "Tungsten Rounded B"
-        , "sans-serif"
-        ]
+    fontFamilies fonts.heading
 
 
 heading : Int -> List (Attribute msg) -> (List (Html msg) -> Html msg)
@@ -123,7 +119,7 @@ heading level attrs =
             [ css
                 [ headingFontFamilies
                 , fontSize (getFontSizeSetting level)
-                , C.property "font-weight" (String.fromInt (getFontWeightSetting level))
+                , property "font-weight" (String.fromInt (getFontWeightSetting level))
                 , lineHeight (getLineHeightSetting level)
                 , color (getColorSetting level)
                 ]

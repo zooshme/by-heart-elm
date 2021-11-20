@@ -1,6 +1,17 @@
-module Components.Variables exposing (..)
+module Components.General.Variables exposing (..)
 
-import Css exposing (Color, Compatible, FontWeight, Px, hsla, int, px)
+import Css exposing (Color, Px, hsla, px)
+
+
+fonts : { heading : List String, body : List String }
+fonts =
+    { heading =
+        [ "Tungsten Rounded A"
+        , "Tungsten Rounded B"
+        , "sans-serif"
+        ]
+    , body = []
+    }
 
 
 colors : { primary : Color, secondary : Color }
@@ -12,7 +23,7 @@ colors =
 
 fontWeights : { bold : Int, normal : Int }
 fontWeights =
-    { bold =  600
+    { bold = 600
     , normal = 400
     }
 

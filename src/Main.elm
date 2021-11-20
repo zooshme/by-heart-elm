@@ -2,6 +2,7 @@ module Main exposing (..)
 
 import Browser exposing (Document)
 import Browser.Navigation exposing (Key)
+import Components.Blocks.SiteHeader exposing (siteHeader)
 import Css exposing (..)
 import Html as H
 import Html.Styled as S exposing (..)
@@ -89,14 +90,8 @@ logoView =
 
 body : Router Route -> S.Html Msg
 body router =
-    header []
-        [ logoView
-        , nav
-            []
-            [ a [ href "/" ] [ text "Home" ]
-            , a [ href "/texts" ] [ text "All texts" ]
-            , a [ href "/texts/1" ] [ text "First text" ]
-            ]
+    div []
+        [ siteHeader []
         , main_ [] [ S.fromUnstyled (routerView router) ]
         ]
 

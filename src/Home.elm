@@ -1,7 +1,7 @@
 module Home exposing (..)
 
-import Components.Typography exposing (heading)
-import Html.Styled as H exposing (Html)
+import Components.General.Typography exposing (heading)
+import Html.Styled exposing (Html, text)
 
 
 type alias Model =
@@ -26,7 +26,6 @@ update msg model =
             ( model, Cmd.none )
 
 
-view : Model -> List (Html msg)
+view : Model -> Html msg
 view model =
-    [ (heading 1 []) [(H.text "Hi there")]
-    ]
+    heading 1 [] [ text "Hi there" ]

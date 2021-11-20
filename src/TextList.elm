@@ -1,12 +1,11 @@
 module TextList exposing (..)
 
-import Html.Styled as H exposing (Html)
+import Html.Styled exposing (Html, h1, text)
 
 
-view : List (Html msg)
+view : Html msg
 view =
-    [ H.h1
+    h1
         []
-        [ H.text "Text list"
+        [ text "Text list"
         ]
-    ]

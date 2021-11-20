@@ -1,6 +1,6 @@
 module OneText exposing (..)
 
-import Html.Styled as H exposing (Html)
+import Html.Styled exposing (Html, h1, text)
 
 
 type alias Model =
@@ -25,10 +25,9 @@ update msg model =
             ( model, Cmd.none )
 
 
-view : Model  -> List (Html msg)
+view : Model -> Html msg
 view { title } =
-    [ H.h1
+    h1
         []
-        [ H.text title
+        [ text title
         ]
-    ]

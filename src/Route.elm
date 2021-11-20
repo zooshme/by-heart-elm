@@ -68,17 +68,17 @@ subscriptions route =
             Sub.none
 
 
-view : Route -> List (S.Html Msg)
+view : Route -> List (H.Html Msg)
 view route =
     case route of
         Home model ->
-            Home.view model
+            [ S.toUnstyled (Home.view model) ]
 
         TextList ->
-            TextList.view
+            [ S.toUnstyled TextList.view ]
 
         OneText model ->
-            OneText.view model
+            [ S.toUnstyled (OneText.view model) ]
 
 
 title : Route -> Maybe String
